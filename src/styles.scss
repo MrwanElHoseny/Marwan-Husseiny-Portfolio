@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import "./app/themes/dark-violet.theme.scss";
+
+@font-face {
+  font-family: audiowide;
+  src: url("./assets/fonts/Audiowide-Regular.ttf");
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
