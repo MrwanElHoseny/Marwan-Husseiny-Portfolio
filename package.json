@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
-    "build": "ng build --prod --output-path docs --base-href='https://mrwanelhoseny.github.io/Marwan-Husseiny-Portfolio/'",
+    "build": "ng build --prod --output-path docs --base-href='/Marwan-Husseiny-Portfolio/'",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
