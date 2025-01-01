@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Marwan-ELH-Resume:build:production"
+              "buildTarget": "Marwan-ELH-Resume:build:production"
             },
             "development": {
-              "browserTarget": "Marwan-ELH-Resume:build:development"
+              "buildTarget": "Marwan-ELH-Resume:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Marwan-ELH-Resume:build"
+            "buildTarget": "Marwan-ELH-Resume:build"
           }
         },
         "test": {
