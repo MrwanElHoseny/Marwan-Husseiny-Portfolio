@@ -12,8 +12,8 @@
 }
 .overlay {
   backdrop-filter: blur(8px);
-  mask-image: url("/assets/animation/anim-triangle.png");
-  -webkit-mask-image: url("/assets/animation/anim-triangle.png"); /* For WebKit browsers */
+  mask-image: url("../../../../../../../../src/assets/animation/anim-triangle.png");
+  -webkit-mask-image: url("../../../../../../../../src/assets/animation/anim-triangle.png"); /* For WebKit browsers */
   mask-size: 90%;
   -webkit-mask-size: 90%; /* For WebKit browsers */
   mask-repeat: no-repeat;
@@ -33,8 +33,8 @@
     #4a306d70 15%,
     rgba(255, 255, 255, 0) 75%
   );
-  mask-image: url("/assets/animation/anim-triangle.png");
-  -webkit-mask-image: url("/assets/animation/anim-triangle.png"); /* For WebKit browsers */
+  mask-image: url("../../../../../../../../src/assets/animation/anim-triangle.png");
+  -webkit-mask-image: url("../../../../../../../../src/assets/animation/anim-triangle.png"); /* For WebKit browsers */
   mask-size: 90%;
   -webkit-mask-size: 90%; /* For WebKit browsers */
   mask-repeat: no-repeat;
