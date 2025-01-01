@@ -1,0 +1,43 @@
+.cluster-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0px 0px;
+}
+
+.circle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-bg);
+  border: 1.8px solid#a562db;
+  border-radius: 50%;
+
+  --xA: 0px;
+  --yA: 0px;
+  --xB: 0px;
+  --yB: 0px;
+
+  animation-name: moveCircle;
+  animation-duration: 0s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  z-index: 2;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes moveCircle {
+  0% {
+    transform: translate3d(var(--xA), var(--yA), 0);
+  }
+  100% {
+    transform: translate3d(var(--xB), var(--yB), 0);
+  }
+}
