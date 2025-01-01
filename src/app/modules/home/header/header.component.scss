@@ -2,12 +2,14 @@
   //   position: absolute;
   top: 0%;
   width: 100%;
-  padding: 40px 80px;
-  min-height: 10vh;
+  padding: 10px 25vh;
+  min-height: 6vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background: linear-gradient(to right, #82009f, #5e33af);
+
 }
 
 .header-logo {

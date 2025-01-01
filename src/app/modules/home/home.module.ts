@@ -4,9 +4,8 @@ import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { LandingComponent } from './pages/landing/landing.component';
-import { AboutComponent } from './pages/about/about.component';
-import { BlogComponent } from './pages/blog/blog.component';
-import { ContactComponent } from './pages/contact/contact.component';
+import { ChevUpComponent } from './pages/landing/animation/chev-up/chev-up.component';
+import { NodeClusterComponent } from './pages/landing/animation/node-cluster/node-cluster.component';
 
 const routes: Routes = [
   {
@@ -14,9 +13,7 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       { path: 'home', component: LandingComponent },
-      { path: 'about', component: AboutComponent },
-      { path: 'blog', component: BlogComponent },
-      { path: 'contact', component: ContactComponent },
+
       { path: '**', redirectTo: 'home' },
     ],
   },
@@ -27,9 +24,8 @@ const routes: Routes = [
     HomeComponent,
     HeaderComponent,
     LandingComponent,
-    AboutComponent,
-    BlogComponent,
-    ContactComponent,
+    ChevUpComponent,
+    NodeClusterComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })

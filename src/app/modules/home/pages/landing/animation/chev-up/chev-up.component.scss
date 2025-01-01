@@ -1,0 +1,44 @@
+.md-chev {
+  width: 850px;
+  height: 700px;
+}
+
+.lg-chev {
+  width: 1150px;
+  height: 900px;
+}
+.mask-container {
+  position: relative;
+}
+.overlay {
+  backdrop-filter: blur(8px);
+  mask-image: url("/assets/animation/anim-triangle.png");
+  -webkit-mask-image: url("/assets/animation/anim-triangle.png"); /* For WebKit browsers */
+  mask-size: 90%;
+  -webkit-mask-size: 90%; /* For WebKit browsers */
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+.mask-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #4a306d70 15%,
+    rgba(255, 255, 255, 0) 75%
+  );
+  mask-image: url("/assets/animation/anim-triangle.png");
+  -webkit-mask-image: url("/assets/animation/anim-triangle.png"); /* For WebKit browsers */
+  mask-size: 90%;
+  -webkit-mask-size: 90%; /* For WebKit browsers */
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}
