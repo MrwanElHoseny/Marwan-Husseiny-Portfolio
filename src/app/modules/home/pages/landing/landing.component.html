@@ -2,12 +2,14 @@
   <div
     class="position-relative d-flex justify-content-center align-items-center h-100"
   >
-    <div class="d-block">
-      <h1 class="hm-title">MARWAN</h1>
-      <h1 class="hm-title-outline">EL HOSENY</h1>
+    <div class="d-block text-center">
+      <h1 class="hm-title" id="title">{{ firstName }}</h1>
+      <h1 class="hm-title-outline" id="title-outline">{{ lastName }}</h1>
     </div>
 
-    <!-- <ngx-particles [id]="id" [options]="particlesOptions"></ngx-particles> -->
+    <div class="particles">
+      <ngx-particles [id]="id" [options]="particlesOptions"></ngx-particles>
+    </div>
     <!-- <node-cluster
       class="node-cluster-1 position-absolute"
       [nodeCount]="10"
@@ -16,14 +18,26 @@
 
     <node-cluster class="node-cluster-3 position-absolute"></node-cluster> -->
 
-    <div class="chev-left-container position-absolute">
-      <chev-up> </chev-up>
-    </div>
-    <div class="chev-mid-container position-absolute">
-      <chev-up size="lg"> </chev-up>
-    </div>
-    <div class="chev-right-container position-absolute">
-      <chev-up> </chev-up>
+    <div class="chev-container" id="chevs">
+      <div
+        class="chev-left-container chev-sway position-absolute"
+        id="chev-left"
+      >
+        <div class="chev-sm">
+          <chev-up> </chev-up>
+        </div>
+      </div>
+      <div class="chev-mid-container chev-sway position-absolute" id="chev-mid">
+        <chev-up size="lg"> </chev-up>
+      </div>
+      <div
+        class="chev-right-container chev-sway position-absolute"
+        id="chev-right"
+      >
+        <div class="chev-sm">
+          <chev-up> </chev-up>
+        </div>
+      </div>
     </div>
   </div>
 </div>

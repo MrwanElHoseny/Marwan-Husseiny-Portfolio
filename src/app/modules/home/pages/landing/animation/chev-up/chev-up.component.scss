@@ -12,33 +12,38 @@
 }
 .overlay {
   backdrop-filter: blur(8px);
-  mask-image: url("../../../../../../../../src/assets/animation/anim-triangle.png");
-  -webkit-mask-image: url("../../../../../../../../src/assets/animation/anim-triangle.png"); /* For WebKit browsers */
-  mask-size: 90%;
-  -webkit-mask-size: 90%; /* For WebKit browsers */
+  mask-image: url("../../../../../../../../src/assets/animation/anim-triangle.svg");
+  -webkit-mask-image: url("../../../../../../../../src/assets/animation/anim-triangle.svg"); /* For WebKit browsers */
+  mask-size: 90% 90%;
+  -webkit-mask-size: 90% 90%; /* For WebKit browsers */
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   mask-position: center;
   -webkit-mask-position: center;
-}
-.mask-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: linear-gradient(
     to bottom,
-    #4a306d70 15%,
-    rgba(255, 255, 255, 0) 75%
+    rgb(94 55 147 / 44%) 15%,
+    rgba(255, 255, 255, 0) 65%
   );
-  mask-image: url("../../../../../../../../src/assets/animation/anim-triangle.png");
-  -webkit-mask-image: url("../../../../../../../../src/assets/animation/anim-triangle.png"); /* For WebKit browsers */
-  mask-size: 90%;
-  -webkit-mask-size: 90%; /* For WebKit browsers */
-  mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-  mask-position: center;
-  -webkit-mask-position: center;
 }
+// .mask-container::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: linear-gradient(
+//     to bottom,
+//     #4a306d70 15%,
+//     rgba(255, 255, 255, 0) 75%
+//   );
+//   mask-image: url("../../../../../../../../src/assets/animation/anim-triangle.svg");
+//   -webkit-mask-image: url("../../../../../../../../src/assets/animation/anim-triangle.svg"); /* For WebKit browsers */
+//   mask-size: 90% 90%;
+//   -webkit-mask-size: 90% 90%; /* For WebKit browsers */
+//   mask-repeat: no-repeat;
+//   -webkit-mask-repeat: no-repeat;
+//   mask-position: center;
+//   -webkit-mask-position: center;
+// }

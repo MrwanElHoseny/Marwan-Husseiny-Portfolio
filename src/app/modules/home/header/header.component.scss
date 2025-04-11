@@ -1,5 +1,6 @@
 .header-container {
-  //   position: absolute;
+  position: fixed;
+  z-index: 999999;
   top: 0%;
   width: 100%;
   padding: 10px 25vh;
@@ -9,7 +10,6 @@
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(to right, #82009f, #5e33af);
-
 }
 
 .header-logo {

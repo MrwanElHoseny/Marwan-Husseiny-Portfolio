@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ChevUpComponent } from './pages/landing/animation/chev-up/chev-up.component';
 import { NodeClusterComponent } from './pages/landing/animation/node-cluster/node-cluster.component';
+import { NgxParticlesModule } from '@tsparticles/angular';
 
 const routes: Routes = [
   {
@@ -27,6 +28,6 @@ const routes: Routes = [
     ChevUpComponent,
     NodeClusterComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), NgxParticlesModule],
 })
 export class HomeModule {}
