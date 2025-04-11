@@ -88,4 +88,21 @@
   font-weight: 600;
   z-index: 4;
   transition: transform 2s cubic-bezier(0.15, 0.53, 0.53, 0.98);
+
+  opacity: 0;
+  animation: outline-title-in 2.5s cubic-bezier(0.15, 0.53, 0.53, 0.98) 2s
+    forwards;
+}
+
+@keyframes outline-title-in {
+  from {
+    opacity: 0;
+    filter: blur(15px);
+    letter-spacing: 75px;
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    letter-spacing: 0px;
+  }
 }
