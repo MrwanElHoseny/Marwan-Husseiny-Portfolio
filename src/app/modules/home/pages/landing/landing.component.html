@@ -1,22 +1,22 @@
 <div class="home-container">
   <div
-    class="position-relative d-flex justify-content-center align-items-center h-100"
+    class="position-relative d-flex justify-content-center align-items-center vh-100 overflow-hidden"
   >
+    <div class="position-absolute hm-welcome" id="welcome" style="top: 20%">
+      <content-fade-up [delay]="2" [duration]="2">
+        <div class="welcome-text">Hey There! I'm</div>
+      </content-fade-up>
+    </div>
     <div class="d-block text-center">
-      <h1 class="hm-title" id="title">{{ firstName }}</h1>
+      <h1 class="hm-title" id="title">
+        <text-animate [text]="firstName"></text-animate>
+      </h1>
       <h1 class="hm-title-outline" id="title-outline">{{ lastName }}</h1>
     </div>
 
     <div class="particles">
       <ngx-particles [id]="id" [options]="particlesOptions"></ngx-particles>
     </div>
-    <!-- <node-cluster
-      class="node-cluster-1 position-absolute"
-      [nodeCount]="10"
-    ></node-cluster> -->
-    <!-- <node-cluster class="node-cluster-2 position-absolute"></node-cluster>
-
-    <node-cluster class="node-cluster-3 position-absolute"></node-cluster> -->
 
     <div class="chev-container" id="chevs">
       <div
@@ -39,5 +39,20 @@
         </div>
       </div>
     </div>
+
+    <div class="start-text-container" style="bottom: 10%" #startSection>
+      <start-text [text]="'Start Exploring'"> </start-text>
+      <div class="arrow-down d-flex justify-content-center pt-4">
+        <div class="arrow-container" #startArrow>
+          <fa-icon [icon]="arrowDown" size="sm"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="position-relative d-flex justify-content-center align-items-center vh-100"
+  >
+    <h1>Hello</h1>
   </div>
 </div>

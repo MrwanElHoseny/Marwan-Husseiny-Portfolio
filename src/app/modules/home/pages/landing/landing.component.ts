@@ -1,28 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {
   Engine,
-  Events,
-  Interactivity,
   IShapeDrawData,
   IShapeDrawer,
   MoveDirection,
   OutMode,
   Particle,
-  tsParticles,
 } from '@tsparticles/engine';
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { NgParticlesService } from '@tsparticles/angular';
 import { loadSlim } from '@tsparticles/slim';
-import { assert } from 'console';
 import { ConfigService } from 'src/app/services/config.service';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import gsap from 'gsap';
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent implements OnInit {
+  @ViewChild('startArrow', { static: true }) startArrow!: ElementRef;
+  @ViewChild('startSection', { static: true }) startSection!: ElementRef;
   id = 'home-particles';
-
+  arrowDown = faArrowDown;
   /* Starting from 1.19.0 you can use a remote url (AJAX request) to a JSON with the configuration */
   particlesUrl = 'http://foo.bar/particles.json';
 
@@ -31,6 +32,10 @@ export class LandingComponent implements OnInit {
     background: {},
     fpsLimit: 120,
 
+    fullScreen: {
+      enable: false,
+      zIndex: 99999999,
+    },
     interactivity: {
       events: {
         onClick: {},
@@ -49,7 +54,7 @@ export class LandingComponent implements OnInit {
     },
     particles: {
       color: {
-        value: '#a562db',
+        value: '#9d4edd',
       },
       links: {
         color: '#461986',
@@ -106,7 +111,7 @@ export class LandingComponent implements OnInit {
           context.fillStyle = '#10002b';
           context.fill();
           // Change this to your desired fill color
-          context.strokeStyle = '#a562db';
+          context.strokeStyle = '#9d4edd';
           context.lineWidth = 2;
           context.stroke();
           context.closePath();
@@ -116,46 +121,99 @@ export class LandingComponent implements OnInit {
       engine.addShape(customCircleDrawer);
     });
     this.initMouseSway();
+    this.initStartArrow();
   }
 
   initMouseSway() {
-    document.addEventListener('mousemove', (e) => {
-      const centerX = window.innerWidth / 2; // Calculate the center x-coordinate of the viewport
-      const distanceFromCenterX = e.clientX - centerX; // Calculate the distance from the center
-      let titleElement = document.getElementById('title');
-      let titleOutlineElement = document.getElementById('title-outline');
-      let chevLeftElement = document.getElementById('chev-left');
-      let chevMidElement = document.getElementById('chev-mid');
-      let chevRightElement = document.getElementById('chev-right');
+    document.addEventListener('mousemove', this.swayContent);
+  }
 
-      if (titleElement) {
-        titleElement.style.transform = `translateX(${
-          distanceFromCenterX / 50
-        }px)`;
-      }
+  swayContent(e: MouseEvent) {
+    const centerX = window.innerWidth / 2; // Calculate the center x-coordinate of the viewport
+    const distanceFromCenterX = e.clientX - centerX; // Calculate the distance from the center
+    let homeWelcome = document.getElementById('welcome');
+    let titleElement = document.getElementById('title');
+    let titleOutlineElement = document.getElementById('title-outline');
+    let chevLeftElement = document.getElementById('chev-left');
+    let chevMidElement = document.getElementById('chev-mid');
+    let chevRightElement = document.getElementById('chev-right');
 
-      if (titleOutlineElement) {
-        titleOutlineElement.style.transform = `translateX(${
-          distanceFromCenterX / 25
-        }px)`;
-      }
+    if (homeWelcome) {
+      homeWelcome.style.transform = `translateX(${distanceFromCenterX / 50}px)`;
+    }
 
-      if (chevLeftElement) {
-        chevLeftElement.style.transform = ` translateX(${
-          -distanceFromCenterX / 35
-        }px)`;
+    if (titleElement) {
+      titleElement.style.transform = `translateX(${
+        distanceFromCenterX / 50
+      }px)`;
+    }
+
+    if (titleOutlineElement) {
+      titleOutlineElement.style.transform = `translateX(${
+        distanceFromCenterX / 25
+      }px)`;
+    }
+
+    if (chevLeftElement) {
+      chevLeftElement.style.transform = ` translateX(${
+        -distanceFromCenterX / 35
+      }px)`;
+    }
+    if (chevMidElement) {
+      chevMidElement.style.transform = `translateX(${
+        -distanceFromCenterX / 25
+      }px) `;
+    }
+    if (chevRightElement) {
+      chevRightElement.style.transform = `translateX(${
+        -distanceFromCenterX / 15
+      }px)`;
+    }
+  }
+
+  initStartArrow() {
+    const startSection = this.startSection.nativeElement;
+    if (!startSection) return;
+    this.startArrowBounce();
+
+    gsap.fromTo(
+      startSection,
+      {
+        y: 35,
+        opacity: 0,
+        filter: 'blur(15px)',
+      },
+      {
+        y: 0,
+        filter: 'blur(0px)',
+        ease: 'ease-in',
+        delay: 3,
+        opacity: 1,
+        duration: 1,
+        onComplete: () => {},
       }
-      if (chevMidElement) {
-        chevMidElement.style.transform = `translateX(${
-          -distanceFromCenterX / 25
-        }px) `;
+    );
+  }
+  startArrowBounce() {
+    const startArrow = this.startArrow.nativeElement;
+
+    if (!startArrow) return;
+
+    gsap.fromTo(
+      startArrow,
+      {
+        y: 30,
+      },
+      {
+        y: 0,
+        color: '#fafafa',
+        borderColor: '#fafafa',
+        ease: 'ease-in',
+        yoyo: true,
+        repeat: -1,
+        duration: 1,
       }
-      if (chevRightElement) {
-        chevRightElement.style.transform = `translateX(${
-          -distanceFromCenterX / 15
-        }px)`;
-      }
-    });
+    );
   }
 
   get firstName() {

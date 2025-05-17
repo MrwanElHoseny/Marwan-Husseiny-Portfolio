@@ -5,8 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ChevUpComponent } from './pages/landing/animation/chev-up/chev-up.component';
-import { NodeClusterComponent } from './pages/landing/animation/node-cluster/node-cluster.component';
 import { NgxParticlesModule } from '@tsparticles/angular';
+import { TextAnimateComponent } from 'src/app/modules/home/pages/landing/animation/text-animate/text-animate.component';
+import { ContentFadeUpComponent } from 'src/app/modules/home/pages/landing/animation/content-fade-up/content-fade-up.component';
+import { StartTextComponent } from './pages/landing/animation/start-text/start-text.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes: Routes = [
   {
@@ -26,8 +29,15 @@ const routes: Routes = [
     HeaderComponent,
     LandingComponent,
     ChevUpComponent,
-    NodeClusterComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), NgxParticlesModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    NgxParticlesModule,
+    TextAnimateComponent,
+    ContentFadeUpComponent,
+    StartTextComponent,
+    FontAwesomeModule,
+  ],
 })
 export class HomeModule {}

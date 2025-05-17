@@ -15,12 +15,24 @@
   font-family: poppins-semibold;
   src: url("./assets/fonts/Poppins-SemiBold.ttf");
 }
+@font-face {
+  font-family: playfair;
+  src: url("./assets/fonts/PlayfairDisplay-Regular.ttf");
+}
+@font-face {
+  font-family: playfair-semibold;
+  src: url("./assets/fonts/PlayfairDisplay-SemiBold.ttf");
+}
+@font-face {
+  font-family: playfair-italic;
+  src: url("./assets/fonts/PlayfairDisplay-Italic.ttf");
+}
 html,
 body {
   height: 100%;
   width: 100%;
 }
 
-h1{
+h1 {
   font-family: poppins-semibold;
 }
