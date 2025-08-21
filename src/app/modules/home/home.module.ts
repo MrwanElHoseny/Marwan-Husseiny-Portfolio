@@ -10,16 +10,14 @@ import { TextAnimateComponent } from 'src/app/modules/home/pages/landing/animati
 import { ContentFadeUpComponent } from 'src/app/modules/home/pages/landing/animation/content-fade-up/content-fade-up.component';
 import { StartTextComponent } from './pages/landing/animation/start-text/start-text.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AboutComponent } from './pages/about/about.component';
+import { TechStackComponent } from './pages/tech-stack/tech-stack.component';
+import { SkillsComponent } from './pages/skills/skills.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    children: [
-      { path: 'home', component: LandingComponent },
-
-      { path: '**', redirectTo: 'home' },
-    ],
   },
   { path: '**', redirectTo: '' },
 ];
@@ -38,6 +36,9 @@ const routes: Routes = [
     ContentFadeUpComponent,
     StartTextComponent,
     FontAwesomeModule,
+    AboutComponent,
+    TechStackComponent,
+    SkillsComponent,
   ],
 })
 export class HomeModule {}

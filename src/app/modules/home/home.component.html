@@ -1,9 +1,22 @@
 <div class="app-container">
-  <div class="header-container">
+  <!-- <div class="header-container">
     <app-header> </app-header>
-  </div>
+  </div> -->
 
-  <div class="content-wrapper">
-    <router-outlet></router-outlet>
+  <div class="scroll-container">
+    <div class="slide" #slideRef>
+      <app-landing></app-landing>
+    </div>
+
+    <div class="slide" #slideRef>
+      <app-about></app-about>
+    </div>
+
+    <div class="slide" #slideRef>
+      <app-tech-stack></app-tech-stack>
+    </div>
+    <div class="slide" #slideRef>
+      <app-skills></app-skills>
+    </div>
   </div>
 </div>

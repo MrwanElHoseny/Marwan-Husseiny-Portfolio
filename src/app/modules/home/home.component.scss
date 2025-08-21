@@ -4,5 +4,13 @@
 }
 .header-container {
 }
-.content-wrapper {
+.scroll-container {
+  height: 100vh;
+  overflow: hidden;
+  // scroll-snap-type: y mandatory;
+  // scroll-behavior: smooth;
+}
+.slide {
+  // height: 100vh;
+  // scroll-snap-align: start;
 }

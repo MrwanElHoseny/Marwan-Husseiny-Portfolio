@@ -24,10 +24,7 @@ export class LandingComponent implements OnInit {
   @ViewChild('startSection', { static: true }) startSection!: ElementRef;
   id = 'home-particles';
   arrowDown = faArrowDown;
-  /* Starting from 1.19.0 you can use a remote url (AJAX request) to a JSON with the configuration */
-  particlesUrl = 'http://foo.bar/particles.json';
 
-  /* or the classic JavaScript object */
   particlesOptions = {
     background: {},
     fpsLimit: 120,
@@ -53,11 +50,9 @@ export class LandingComponent implements OnInit {
       },
     },
     particles: {
-      color: {
-        value: '#9d4edd',
-      },
       links: {
-        color: '#461986',
+        // color: '#461986',
+        color: '#aaaaaa',
         distance: 320,
         enable: true,
         opacity: 0.5,
@@ -108,10 +103,10 @@ export class LandingComponent implements OnInit {
           context.beginPath();
           context.arc(0, 0, radius, 0, Math.PI * 2, false);
           // Fill the inner space with a different color
-          context.fillStyle = '#10002b';
+          context.fillStyle = '#eeeeee'; //var(--primary-bg) //#10002b
           context.fill();
           // Change this to your desired fill color
-          context.strokeStyle = '#9d4edd';
+          context.strokeStyle = '#aaaaaa'; //#9d4edd
           context.lineWidth = 2;
           context.stroke();
           context.closePath();
